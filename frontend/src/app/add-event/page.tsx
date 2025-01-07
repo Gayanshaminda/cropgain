@@ -46,7 +46,7 @@ const AddEvent: React.FC = () => {
     
       try {
         const response = await fetch(
-          `http://localhost:5000/api/events?date=${selectedDate.toISOString().split("T")[0]}`
+          `${process.env.API_BASE_URL}/api/events?date=${selectedDate.toISOString().split("T")[0]}`
         );
     
         if (response.ok) {
@@ -137,7 +137,7 @@ const AddEvent: React.FC = () => {
     }));
   
     try {
-      const response = await fetch("http://localhost:5000/api/events", {
+      const response = await fetch(`${process.env.API_BASE_URL}/api/events`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -179,7 +179,7 @@ const AddEvent: React.FC = () => {
     // If the event has an _id, it's a saved event (backend)
     try {
       const response = await fetch(
-        `http://localhost:5000/api/events/${eventToDelete._id}`,
+        `${process.env.API_BASE_URL}/api/events/${eventToDelete._id}`,
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
@@ -214,7 +214,7 @@ const AddEvent: React.FC = () => {
     };
   
     try {
-      const response = await fetch(`http://localhost:5000/api/events/${eventToUpdate.id}`, {
+      const response = await fetch(`${process.env.API_BASE_URL}/api/events/${eventToUpdate.id}`, {
         method: "PUT", // Make sure you use PUT for updating
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -64,7 +64,7 @@ const formatDate = (date: string) => {
   
 
 useEffect(() => {
-  fetch("http://localhost:5000/api/lands/land")
+  fetch(`${process.env.API_BASE_URL}/api/lands/land`)
     .then((response) => response.json())
     .then((data) => {
       console.log("Raw crops data:", JSON.stringify(data, null, 2));
@@ -126,7 +126,7 @@ const summaryBarData = {
     };
   
     try {
-      const response = await fetch(`http://localhost:5000/api/lands/${encodeURIComponent(selectedSection)}/crops`, {
+      const response = await fetch(`${process.env.API_BASE_URL}/api/lands/${encodeURIComponent(selectedSection)}/crops`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -172,7 +172,7 @@ const summaryBarData = {
   
     try {
       const response = await fetch(
-        `http://localhost:5000/api/lands/${encodeURIComponent(selectedSection)}/crops/${encodeURIComponent(cropId)}`,
+        `${process.env.API_BASE_URL}/api/lands/${encodeURIComponent(selectedSection)}/crops/${encodeURIComponent(cropId)}`,
         {
           method: "PUT",
           headers: {
@@ -220,11 +220,11 @@ const summaryBarData = {
       console.log('Delete request details:', {
         section: selectedSection,
         cropId: cropId,
-        url: `http://localhost:5000/api/lands/${encodeURIComponent(selectedSection)}/crops/${encodeURIComponent(cropId)}`
+        url: `${process.env.API_BASE_URL}/api/lands/${encodeURIComponent(selectedSection)}/crops/${encodeURIComponent(cropId)}`
       });
   
       const response = await fetch(
-        `http://localhost:5000/api/lands/${encodeURIComponent(selectedSection)}/crops/${encodeURIComponent(cropId)}`,
+        `${process.env.API_BASE_URL}/api/lands/${encodeURIComponent(selectedSection)}/crops/${encodeURIComponent(cropId)}`,
         {
           method: "DELETE",
           headers: {
