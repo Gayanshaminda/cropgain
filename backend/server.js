@@ -41,6 +41,11 @@ app.use((err, req, res, next) => {
   });
 });
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Welcome to the API. Use /api/* endpoints to interact with the server.');
+});
+
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/Accounts/coop/", accountRoutes);
