@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Aboutus() {
   return (
     <div
@@ -5,11 +7,13 @@ export default function Aboutus() {
       style={{ height: "650px" }}
     >
       <div className="w-full" style={{ height: "650px", width: "1100px" }}>
-        <img
+        <Image
           src="/assets/Tea.jpg"
           alt="Tea picking"
           className="object-cover"
-          style={{ width: "100%", height: "100%" }}
+          width={114} // Specify width
+    height={114} // Specify height
+          
         />
       </div>
 
@@ -21,7 +25,7 @@ export default function Aboutus() {
           Why you choose us?
         </h1>
         <p className="mb-4 text-2xl text-gray-700">
-          At CropGain, we're dedicated to revolutionizing harvest management for
+          At CropGain, we are dedicated to revolutionizing harvest management for
           a more profitable, efficient, and safe crop production. Our innovative
           solutions empower farmers and growers with the tools they need to
           optimize their harvest processes, from tea to cinnamon and beyond.

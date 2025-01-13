@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import Image from 'next/image';
 
 const Signup: React.FC = () => {
  
@@ -36,7 +37,7 @@ const Signup: React.FC = () => {
       }}
     >
       <div className="relative w-full max-w-4xl p-0 bg-white shadow-lg rounded-lg">
-        <img
+        <Image
           src="/assets/green-tea.jpg"
           alt="Plant background"
           className="absolute inset-0 object-cover w-full h-full rounded-lg"
@@ -96,7 +97,7 @@ const Signup: React.FC = () => {
             <div className="mt-6 flex items-center justify-center space-x-4">
               <span className="text-gray-600">Or</span>
               <button className="flex items-center justify-center p-2 border border-gray-300 rounded-md">
-                <img
+                <Image
                   src="/assets/google.png"
                   alt="Google"
                   className="h-5 w-5"
@@ -106,7 +107,7 @@ const Signup: React.FC = () => {
                 </span>
               </button>
               <button className="flex items-center justify-center p-2 border border-gray-300 rounded-md">
-                <img
+                <Image
                   src="/assets/Microsoft.png"
                   alt="Microsoft"
                   className="h-5 w-5"

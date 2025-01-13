@@ -3,24 +3,25 @@
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const farmData = [
   {
-    img: '/assets/co-state.jpg',
+    Image: '/assets/co-state.jpg',
     name: 'COOP tea state',
     cropHealth: 'Good',
     sowingDate: 'Feb 21, 2024',
     harvestDate: 'Apr 25, 2024',
   },
   {
-    img: '/assets/state.jpg',
+    Image: '/assets/state.jpg',
     name: 'State - Kotapola',
     cropHealth: 'Average',
     sowingDate: 'Mar 15, 2024',
     harvestDate: 'Jun 10, 2024',
   },
   {
-    img: '/assets/hotel.jpeg',
+    Image: '/assets/hotel.jpeg',
     name: 'Tourist Bangalore',
     status: 'Available',
     availability: 'Full',
@@ -28,7 +29,7 @@ const farmData = [
     
   },
   {
-    img: '/assets/nursary.jpeg',
+    Image: '/assets/nursary.jpeg',
     name: 'Nursery',
     plantHealth: 'Excellent',
     fertilizerDay: 'May 12, 2024',
@@ -52,10 +53,12 @@ const FarmDetails: React.FC = () => {
   return (
     <div className="relative w-full h-full bg-white rounded-lg shadow-md overflow-hidden">
       {/* Image Section */}
-      <img
-        src={currentFarm.img}
+      <Image
+        src={currentFarm.Image}
         alt="Farm"
-        className="absolute inset-0 w-full h-full object-cover"
+        width={500} // Set fixed width
+  height={300} // Set fixed height
+        className="absolute inset-0 object-cover"
       />
 
       {/* Navigation Arrows */}

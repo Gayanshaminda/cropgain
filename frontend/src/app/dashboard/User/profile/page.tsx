@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from 'next/image';
 
 const UserProfile = () => {
   const [userDetails, setUserDetails] = useState({
@@ -94,7 +95,7 @@ const UserProfile = () => {
         <div className="w-full lg:w-1/2 p-10 flex flex-col items-center justify-center bg-gradient-to-br from-green-600 to-green-400">
           <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
             {profileImage ? (
-              <img
+              <Image
                 src={profileImage}
                 alt="User"
                 className="w-full h-full object-cover"

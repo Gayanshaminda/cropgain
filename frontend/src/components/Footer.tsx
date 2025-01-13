@@ -1,3 +1,6 @@
+
+import Image from 'next/image';
+
 export default function Footer() {
   return (
     <footer className="bg-teal-900 text-white py-8 w-full text-lg">
@@ -8,16 +11,33 @@ export default function Footer() {
           </div>
           <div className="flex space-x-4 ml-8">
             <a href="#" aria-label="LinkedIn">
-              <img src="/assets/linkedin.svg" alt="LinkedIn" className="h-6" />
+              <Image src="/assets/linkedin.svg" alt="LinkedIn" className="h-6" 
+              width={64} // Specify width
+              height={64} // Specify height
+              
+              />
             </a>
             <a href="#" aria-label="Twitter">
-              <img src="/assets/twitter.svg" alt="Twitter" className="h-6" />
+              <Image src="/assets/twitter.svg" alt="Twitter" className="h-6"
+              
+              width={64} // Specify width
+    height={64} // Specify height
+              
+              />
             </a>
             <a href="#" aria-label="Facebook">
-              <img src="/assets/facebook.svg" alt="Facebook" className="h-6" />
+              <Image src="/assets/facebook.svg" alt="Facebook" className="h-6" 
+              width={64} // Specify width
+              height={64} // Specify height
+              
+              />
             </a>
             <a href="#" aria-label="YouTube">
-              <img src="/assets/youtube.svg" alt="YouTube" className="h-6" />
+              <Image src="/assets/youtube.svg" alt="YouTube" className="h-6"
+              
+              width={64} // Specify width
+    height={64} // Specify height
+              />
             </a>
           </div>
         </div>

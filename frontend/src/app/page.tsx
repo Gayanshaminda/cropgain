@@ -5,6 +5,8 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import React from "react";
+import Image from 'next/image';
+
 
 export default function Home() {
   return (
@@ -54,10 +56,12 @@ export default function Home() {
         </div>
 
         <div className="mr-36 mt-4">
-          <img
+          <Image
             src="/assets/leave.png"
             alt="leave"
             className="w-[435px] h-auto object-cover"
+            width={64} // Specify width
+    height={64} // Specify height
           />
         </div>
       </div>

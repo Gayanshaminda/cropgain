@@ -6,6 +6,8 @@ import "react-calendar/dist/Calendar.css"; // Import calendar styles
 import { Line } from "react-chartjs-2"; // For charts
 import "chart.js/auto"; // Required for Chart.js
 import Modal from "react-modal"; // For photo viewing
+import Image from 'next/image';
+
 
 const PlantingGrowthTracking = () => {
   const [showForm, setShowForm] = useState(false);
@@ -473,7 +475,7 @@ const PlantingGrowthTracking = () => {
                         {record.photos.length > 0 ? (
                           <div className="flex space-x-2">
                             {record.photos.map((photo, index) => (
-                              <img
+                              <Image
                                 key={index}
                                 src={photo.url}
                                 alt={`Plant ${record.cropType} ${index + 1}`}
@@ -523,7 +525,7 @@ const PlantingGrowthTracking = () => {
                       colSpan="8"
                       className="text-center px-4 py-2 text-gray-600"
                     >
-                      No plantings found matching "{searchQuery}"
+                      No plantings found matching {`"${searchQuery}"`}
                     </td>
                   </tr>
                 )}
@@ -564,7 +566,7 @@ const PlantingGrowthTracking = () => {
           >
             {currentPhoto && (
               <div>
-                <img
+                <Image
                   src={currentPhoto.url}
                   alt="Plant Growth"
                   className="w-full h-auto mb-4 rounded-md"
@@ -834,7 +836,7 @@ const PlantingGrowthTracking = () => {
                     {record.photos.length > 0 && (
                       <div className="mt-4 flex flex-wrap gap-2">
                         {record.photos.map((photo, index) => (
-                          <img
+                          <Image
                             key={index}
                             src={photo.url}
                             alt={`Plant ${record.cropType} ${index + 1}`}
@@ -891,7 +893,7 @@ const PlantingGrowthTracking = () => {
           >
             {currentPhoto && (
               <div>
-                <img
+                <Image
                   src={currentPhoto.url}
                   alt="Plant Growth"
                   className="w-full h-auto mb-4 rounded-md"

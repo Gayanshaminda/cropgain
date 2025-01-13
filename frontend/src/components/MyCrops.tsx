@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface Crop {
   name: string;
@@ -67,10 +68,12 @@ const MyCrops = () => {
           <div key={crop.name} className="relative">
             <div className="flex items-start gap-4">
               {/* Crop Image */}
-              <img
+              <Image
                 src={crop.imageUrl}
                 alt={crop.name}
-                className="w-10 h-10 rounded-full object-cover"
+                width={500} // Set fixed width
+                height={300} // Set fixed height
+                className="rounded-full object-cover"
               />
               
               {/* Crop Details */}

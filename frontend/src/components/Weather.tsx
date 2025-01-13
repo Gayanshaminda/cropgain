@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 
 const Weather: React.FC = () => {
   const [weather, setWeather] = useState<{ temp: number; description: string; icon: string } | null>(null);
@@ -41,10 +42,12 @@ const Weather: React.FC = () => {
   return (
     <div className="flex items-center ">
       {weather?.icon && (
-        <img
+        <Image
           src={weather.icon} 
           alt="Weather Icon"
-          style={{ width:'60px' ,height:'60px', marginRight: '10px' }}
+          width={60} // Set fixed width
+  height={50} // Set fixed height
+          style={{  marginRight: '10px' }}
         />
       )}
       <span>
